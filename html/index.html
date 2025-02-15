@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>NFR HUDS</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js"></script>
+</head>
+
+<body>
+
+    <div class="wholeBody" id="menu">
+        <div class="UIbackground undraggable"></div>
+        <div class="upperBody undraggable">
+            <div class="vehicleTypes">
+                <div class="vehicleBox" id="normalCars" onclick="showCarsByType('normal')"><div class="vehicleBoxIcon undraggable" id="normalCarsIcon"></div></div>
+                <br>
+                <div class="vehicleBox" id="suvCars" onclick="showCarsByType('suv')"><div class="vehicleBoxIcon undraggable" id="suvCarsIcon"></div></div>
+                <br>
+                <div class="vehicleBox" id="sportsCars" onclick="showCarsByType('sports')"><div class="vehicleBoxIcon undraggable" id="sportsCarsIcon"></div></div>
+                <br>
+                <div class="vehicleBox" id="motorcycles" onclick="showCarsByType('motorcycle')"><div class="vehicleBoxIcon undraggable" id="motorcyclesIcon"></div></div>
+                <br>
+                <div class="vehicleBox" id="helicopters" onclick="showCarsByType('helicopter')"><div class="vehicleBoxIcon undraggable" id="helicoptersIcon"></div></div>
+                <br>
+                <div class="vehicleBox" id="specialVehicles" onclick="showCarsByType('special')"><div class="vehicleBoxIcon undraggable" id="specialVehiclesIcon"></div></div>
+            </div>
+            <div class="wholeLine undraggable">
+                <div class="longLine"></div>
+                <div class="smallLineUpper"> <div class="smallLineUpperDot"></div> </div>
+                <div class="smallLineLower"><div class="smallLineLowerDot"></div></div>
+                <div class="threeLines">
+                    <div class="lineOne"></div>
+                    <div class="lineTwo"></div>
+                    <div class="lineThree"></div>
+                </div>
+            </div>
+            <input type="text" class="searchBar undraggable" placeholder="Search car by name">
+                <div class="searchBarIcon">
+                    <div class="theIcon"></div>
+                </div>
+            </input>
+            <div class="sorter">
+                <div class="sortBy">Sort by</div>
+                <div class="type" id="typeOne" onclick="sortCarBoxes('lowToHigh', 'price')">Price ↑</div>
+                <div class="type" id="typeTwo" onclick="sortCarBoxes('highToLow', 'price')">Price ↓</div>
+                <div class="type" id="typeThree"onclick="sortCarBoxes('lowToHigh', 'speed')">Speed ↑</div>
+                <div class="type" id="typeFour" onclick="sortCarBoxes('highToLow', 'speed')">Speed ↓</div>
+            </div>
+            <div class="carSpecs undraggable">
+                <div class="carSpec" id="maxSpeedSpec"> 
+                    <div class="carSpecBox"><div class="carSpecIcon" id="maxSpeedSpecIcon"></div></div>
+                    <div class="carSpecText">Max.<br>Speed</div> 
+                    <div class="rating"></div>
+                    <div class="ratingText" id="maxSpeedText"><br>Km/h</div>
+                </div>
+                <div class="carSpec" id="brakingForceSpec"> 
+                    <div class="carSpecBox"><div class="carSpecIcon" id="brakingForceSpecIcon"></div></div>
+                    <div class="carSpecText">Braking<br>Force</div> 
+                    <div class="rating">
+                    </div>
+                    <div class="ratingText" id="brakingForceText">100-0<br>Km/h<br></div>
+                </div>
+                <div class="carSpec" id="handlingSpec"> 
+                    <div class="carSpecBox"><div class="carSpecIcon" id="handlingSpecIcon"></div></div>
+                    <div class="carSpecText">Vehicle<br>Handling</div> 
+                    <div class="rating">
+                    </div>
+                    <div class="ratingText" id="handlingText">/10<br>Rating</div>
+                </div>
+                <div class="carSpec" id="accelerationSpec"> 
+                    <div class="carSpecBox"><div class="carSpecIcon" id="accelerationSpecIcon"></div></div>
+                    <div class="carSpecText">Vehicle<br>Torque</div> 
+                    <div class="rating">
+                    </div>
+                    <div class="ratingText" id="accelerationText">0-100<br>Km/h<br></div>
+                </div>
+                <div class="carSpec" id="storageCapacitySpec"> 
+                    <div class="carSpecBox"><div class="carSpecIcon" id="storageCapacitySpecIcon"></div></div>
+                    <div class="carSpecText">Storage<br>Capacity</div> 
+                    <div class="rating">
+                    </div>
+                    <div class="ratingText" id="storageCapacityText"><br>Liters</div>
+                </div>
+                <div class="carSpec" id="weightSpec"> 
+                    <div class="carSpecBox"><div class="carSpecIcon" id="weightSpecIcon"></div></div>
+                    <div class="carSpecText">Weight</div> 
+                    <div class="rating">
+                    </div>
+                    <div class="ratingText" id="weightText"><br>KG</div>
+                </div>
+                <div class="carSpec" id="offroadSpec"> 
+                    <div class="carSpecBox"><div class="carSpecIcon" id="offroadSpecIcon"></div></div>
+                    <div class="carSpecText">Off-Road<br>Capability</div> 
+                    <div class="rating">
+                    </div>
+                    <div class="ratingText" id="offroadText">/10<br>Rating</div>
+                </div>
+                <div class="carSpec" id="stockSpec"> 
+                    <div class="carSpecBox"><div class="carSpecIcon" id="stockSpecIcon"></div></div>
+                    <div class="carSpecText">Vehicle<br>Stock</div> 
+                    <div class="rating">
+                    </div>
+                    <div class="ratingText" id="stockText"><br>Left</div>
+                </div>
+            </div>
+        </div>
+        <div class="middleBody undraggable">
+            <div class="ColorSelector">
+                <div class="colorSelectText">Select color<br></div>
+                <div class="carColor" id="carColorRed" onclick="changeCarColor(255, 0, 0)"></div>
+                <div class="carColor" id="carColorBlue" onclick="changeCarColor(0, 143, 255)"></div>
+                <div class="carColor" id="carColorGreen" onclick="changeCarColor(11, 255, 0)"></div>
+                <div class="carColor" id="carColorSilver" onclick="changeCarColor(192, 192, 192)"></div>
+                <div class="carColor" id="carColorBlack" onclick="changeCarColor(0, 0, 0)"></div>
+                <div class="carColor" id="carColorWhite" onclick="changeCarColor(255, 255, 255)"></div>
+                <div class="carColor" id="carColorYellow" onclick="changeCarColor(223, 255, 0)"></div>
+            </div>
+            <div class="priceBox undraggable">
+                <div class="dollarSign"><div class="dollarSignIcon"></div></div>
+                <div class="totalPriceText">Total Price</div>
+                <div class="totalPrice">$425.000.000</div>
+            </div>
+            <div class="payButtons">
+                <div class="payButton" id="payCash">
+                    <div class="payButtonBox">
+                        <div class="payButtonIcon" id="payCashIcon"></div>
+                    </div>
+                    <div class="payButtonText">Pay by Cash</div>
+                </div>
+                <div class="payButton" id="TestDrive" onclick="testCar()">
+                    <div class="payButtonBox">
+                        <div class="payButtonIcon" id="TestDriveIcon"></div>
+                    </div>
+                    <div class="payButtonText">Test the Car</div>
+                </div>
+                <div class="payButton" id="payCard">
+                    <div class="payButtonBox">
+                        <div class="payButtonIcon" id="payCardIcon"></div>
+                    </div>
+                    <div class="payButtonText">Pay by Card</div>
+                </div>
+            </div>
+            <div class="middleLine">
+                <div class="shortLine"></div>
+                <div class="threeLines" id="threeLinesMiddle">
+                    <div class="lineOne" id="middleLinesOne"></div>
+                    <div class="lineTwo" id="middleLinesTwo"></div>
+                    <div class="lineThree" id="MiddleLinesThree"></div>
+                </div>
+            </div>
+        </div>
+        <div class="lowerBody">
+            <div class="UIbackgroundTwo"></div>
+            <div class="cars" id="cars">
+                <!-- <div class="carBox" id="carBox">
+                    <div class="carName undraggable">Ferrari 488<br></div>
+                    <div class="triangleCorner undraggable"></div>
+                    <div class="carPicture undraggable"></div>
+                    <div class="buyCar undraggable">Buy Car</div>
+                    <div class="carPrice undraggable">$425.000.000</div>
+                </div> -->
+            </div>
+            <div class="lowerLine">
+                <div class="mediumLine"></div>
+                <div class="lineOneUpper"><div class="lineOneUpperDot"></div></div>
+                <dive class="lineTwoLower"><div class="lineTwoLowerDot"></div></dive>
+            </div>
+            <div id="scrollLeftBtn" onclick="scrollCars(-325)"><div class="arrow" id="arrowLeft"></div></div>
+            <div id="scrollRightBtn" onclick="scrollCars(325)"><div class="arrow" id="arrowRight"></div></div>
+        </div>
+    </div>
+    <div class="testCarBody undraggable">
+        <div class="carTestedBox">
+            <div class="testingA">You are testing a</div>
+            <div class="carTestedName">Ferrari 488 Pista</div>
+            <div class="thisCarPrice">This car`s price is listed at</div>
+            <div class="testingPrice">$300.000.000</div>
+        </div>
+        <div class="timerBox"></div>
+    </div>
+</body>
+</html>

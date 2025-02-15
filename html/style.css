@@ -1,0 +1,982 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,700&display=swap');
+
+.UIbackground{
+  position: absolute;
+  height: 72.5vh;
+  top: -0.05vh;
+  left: 0vh;
+  width: 170vh;
+  z-index: -1;
+  background: linear-gradient(90deg, rgba(10,10,10,0.85) 27.5%, rgba(255,255,255,0) 32.5%);
+}
+.UIbackgroundTwo{
+  position: absolute;
+  height: 99.447vh;
+  top: -0.05vh;
+  left: 0vh;
+  width: 201.8vh;
+  z-index: -1;
+  background: linear-gradient(0deg, rgba(10,10,10,0.85) 27.5%, rgba(255,255,255,0) 32.5%);
+}
+.wholeBody{
+  display: none;
+}
+.upperBody{
+  position: absolute;
+  top: 2vh;
+  left: -12vh;
+  transform: scale(0.9);
+}
+.middleBody{
+  position: relative;
+  left: -9vh;
+  top: -1vh;
+  transform: scale(0.9);
+}
+
+.vehicleBox{
+  position: absolute;
+  left: 18vh;
+  width: 9vh;
+  height: 9vh;
+  background-color: rgba(24, 24, 24, 0.5);
+  cursor: pointer;
+  transition: 0.25s;
+  border-radius: 0.15vh;
+}
+.vehicleBoxIcon{
+  position: absolute;
+  margin: 0;
+  width: 4vh;
+  height: 4vh;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  transition: 0.25s;
+}
+
+.vehicleBox:hover{
+  background-color: rgba(49, 48, 46, 0.5);
+}
+.vehicleBox:hover.vehicleBoxIcon{
+  filter: brightness(0) saturate(100%) invert(97%) sepia(97%) saturate(0%) hue-rotate(231deg) brightness(106%) contrast(98%);
+}
+
+.active-vehicle{
+  background-color: rgba(49, 48, 46, 0.5);
+}
+.active-vehicle .vehicleBoxIcon{
+  filter: brightness(0) saturate(100%) invert(97%) sepia(97%) saturate(0%) hue-rotate(231deg) brightness(106%) contrast(98%);
+}
+#normalCars{
+  top: 2vh;
+}
+#normalCarsIcon{
+  background-image: url(icons/normalCar.png);
+}
+
+#suvCars{
+  top: 11.75vh;
+}
+#suvCarsIcon{
+  background-image: url(icons/suvCar.png);
+}
+
+#sportsCars{
+  top: 21.5vh;
+}
+#sportsCarsIcon{
+  background-image: url(icons/sportsCar.png);
+}
+
+#motorcycles{
+  top: 31.25vh;
+}
+#motorcyclesIcon{
+  background-image: url(icons/motorcycle.png);
+}
+
+#helicopters{
+  top: 41vh;
+}
+#helicoptersIcon{
+  background-image: url(icons/helicopter.png);
+}
+#specialVehicles{
+  top: 50.75vh;
+}
+#specialVehiclesIcon{
+  background-image: url(icons/specialVehicle.png);
+}
+
+
+.longLine{
+  position: absolute;
+  top: 0.1vh;
+  left: 16.5vh;
+  width: 0.4vh;
+  height: 61.5vh;
+  background-color: rgba(37, 37, 37, 1);
+  border-radius: 1vh;  
+}
+.smallLineUpper{
+  position: absolute;
+  top: -1.2vh;
+  left: 18.0vh;
+  width: 0.4vh;
+  height: 3vh;
+  background-color:#252525;
+  border-radius: 1vh;  
+  transform: rotate(90deg);
+}
+.smallLineUpperDot{
+  position: absolute;
+  top: 0.2vh;
+  left: 0vh;
+  width: 0.4vh;
+  height: 0.4vh;
+  background-color:#FDFDFD;
+  border-radius: 100vh;  
+  transform: rotate(90deg);
+}
+
+.smallLineLower{
+  position: absolute;
+  top: 58.7vh;
+  left: 19.3vh;
+  width: 0.4vh;
+  height: 6vh;
+  background-color:#252525;
+  border-radius: 1vh;  
+  transform: rotate(90deg);
+}
+
+.smallLineLowerDot{
+  position: absolute;
+  top: 0.2vh;
+  left: 0vh;
+  width: 0.4vh;
+  height: 0.4vh;
+  background-color:#FDFDFD;
+  border-radius: 100vh;  
+  transform: rotate(90deg);
+}
+
+.lineOne{
+  position: absolute;
+  top: 16.5vh;
+  left: 16.5vh;
+  width: 0.3vh;
+  height: 1.35vh;
+  background-color: #FDFDFD;
+  transform: rotate(-65deg);
+  border-radius: 0.5vh;
+  filter: drop-shadow(0vh 0vh 0.35vh #FDFDFD);
+}
+.lineTwo{
+  position: absolute;
+  top: 17.35vh;
+  left: 16.5vh;
+  width: 0.3vh;
+  height: 1.35vh;
+  background-color: #FDFDFD;
+  transform: rotate(-65deg);
+  border-radius: 0.5vh;
+  filter: drop-shadow(0vh 0vh 0.35vh #FDFDFD);
+}
+.lineThree{
+  position: absolute;
+  top: 18.2vh;
+  left: 16.5vh;
+  width: 0.3vh;
+  height: 1.35vh;
+  background-color: #FDFDFD;
+  transform: rotate(-65deg);
+  border-radius: 0.5vh;
+  filter: drop-shadow(0vh 0vh 0.35vh #FDFDFD);
+}
+
+.searchBar{
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: bolder;
+  font-size: 1.5vh;
+  position: absolute;
+  top: 2vh;
+  left: 31.25vh;
+  width: 30vh;
+  height: 3vh;
+  background-color: rgba(27, 27, 27, 0.5);
+  color: white;
+  border: 0;
+  border-top-right-radius: 0.5vh;
+  padding-left: 0.75vh;
+  border-radius: 0.15vh;
+}
+.searchBar:focus{
+  outline: none;
+}
+.searchBarIcon{
+  position: absolute;
+  width: 3.5vh;
+  height: 3.2vh;
+  top: 2vh;
+  left: 27.75vh;
+  background-color: rgba(32, 32, 31, 0.5);
+  transition: 0.25s;
+  border-radius: 0.15vh;
+}
+.theIcon{
+  position: absolute;
+  margin: 0;
+  width: 4vh;
+  height: 4vh;
+  background-repeat: no-repeat;
+  background-size: 2vh;
+  background-position: center;
+  background-image: url(icons/searchIcon.png);
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+}
+.sortBy{
+  display: flex;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 600;
+  font-size: 1.35vh;
+  color: #b8b8b8;
+  position: absolute;
+  width: 6.25vh;
+  height: 3.5vh;
+  top: 5.65vh;
+  left: 27.75vh;
+  background-color: rgba(27, 27, 27, 0.5);
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.15vh;
+}
+.type{
+  display: flex;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 600;
+  font-size: 1.35vh;
+  color: #767675;
+  position: absolute;
+  width: 6.5vh;
+  height: 3.5vh;
+  top: 5.65vh;
+  background-color: rgba(27, 27, 27, 0.5);
+  align-items: center;
+  justify-content: center;
+  transition: 0.15s;
+  cursor: pointer;
+  border-radius: 0.15vh;
+}
+.type:hover{
+  outline: 0.25vh solid #99fe3e;
+  filter: drop-shadow(0vh 0vh 0.25vh #99fe3e);
+  color: #99fe3e;
+}
+.active-type{
+  outline: 0.25vh solid #99fe3e;
+  filter: drop-shadow(0vh 0vh 0.25vh #99fe3e);
+  color: #99fe3e;
+}
+#typeOne{
+  left: 34.65vh;
+} 
+#typeTwo{
+  left: 41.65vh;
+}
+#typeThree{
+  left: 48.65vh;
+}
+#typeFour{
+  left: 55.65vh;
+}
+.carSpecs{
+  display: flex;
+}
+.carSpec{
+  position: absolute;
+  left: 27.75vh;
+  width: 34.4vh;
+  height: 5.75vh;
+  background-color:rgba(27, 27, 27, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.15vh;
+}
+.carSpecBox{
+  position: absolute;
+  width: 6.25vh;
+  height: 5.75vh;
+  background-color: rgba(61, 61, 61, 0.5);
+  left: 0vh;
+  border-radius: 0.15vh;
+}
+.carSpecIcon{
+  position: absolute;
+  margin: 0;
+  width: 4vh;
+  height: 4vh;
+  background-repeat: no-repeat;
+  background-size: 3vh;
+  background-position: center;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+}
+.carSpecText{
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+  font-size: 1.25vh;
+  color: #FDFDFD;
+  position: absolute;
+  left: 7.5vh;
+}
+.rating{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 6.75vh;
+}
+.ratingBox{
+  width: 1vh;
+  height: 1vh;
+  border-radius: 0.15vh;
+  background-color: rgba(40, 40, 39, 0.5);
+  margin: 0.2vh;
+  display: inline-block;
+}
+.green {
+  background-color: rgba(153, 254, 62, 0.5);
+  filter: drop-shadow(0vh 0vh 0.5vh rgba(153, 254, 62, 0.5));
+}
+.gray {
+  background-color: rgba(40, 40, 39, 0.5);
+}
+#maxSpeedSpec{
+  top: 9.55vh;
+}
+#maxSpeedSpecIcon{
+  background-image: url(icons/topSpeed.png);
+}
+#brakingForceSpec{
+  top: 15.9vh;
+}
+#brakingForceSpecIcon{
+  background-image: url(icons/brakeForce.png);
+}
+#handlingSpec{
+  top: 22.25vh;
+}
+#handlingSpecIcon{
+  background-image: url(icons/handling.png);
+}
+#accelerationSpec{
+  top: 28.6vh;
+}
+#accelerationSpecIcon{
+  background-image: url(icons/acceleration.png);
+}
+
+#storageCapacitySpec{
+  top: 34.95vh;
+}
+#storageCapacitySpecIcon{
+  background-image: url(icons/storageCapacity.png);
+}
+
+#weightSpec{
+  top: 41.3vh;
+}
+#weightSpecIcon{
+  background-image: url(icons/weight.png);
+}
+#offroadSpec{
+  top: 47.65vh;
+}
+#offroadSpecIcon{
+  background-image: url(icons/offroad.png);
+}
+#stockSpec{
+  top: 54vh;
+}
+#stockSpecIcon{
+  background-image: url(icons/stock.png);
+}
+.ratingText{
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+  font-size: 1.25vh;
+  color: #FDFDFD;
+  position: absolute;
+  text-align: center;
+  left: 29.5vh;
+}
+#maxSpeedText:before{
+  content: attr(attrMaxSpeed);
+}
+#brakingForceText::after{
+  content: attr(attrBrakingForce)'s';
+}
+#handlingText::before{
+  content: attr(attrHandling);
+}
+#accelerationText::after{
+  content: attr(attrAcceleration)'s';
+}
+#storageCapacityText::before{
+  content: attr(attrStorage);
+}
+#weightText::before{
+  content: attr(attrWeight);
+}
+#offroadText::before{
+  content: attr(attrOffroad);
+}
+#stockText::before{
+  content: attr(attrStock);
+}
+.colorSelectText{
+  width: fit-content;
+  height: fit-content;
+  position: absolute;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+  font-size: 1.5vh;
+  color: #FDFDFD;
+  top: 66.75vh;
+  left: 6vh;
+}
+.colorSelectText::after{
+  content: "From dealer.";
+  color: gray;
+  font-size: 1.25vh;
+}
+.carColor{
+  position: absolute;
+  width: 2.5vh;
+  height: 2.5vh;
+  top: 66.75vh;
+  outline: 0.75vh solid rgba(27, 27, 27, 1);
+  border-radius: 0.05vh;
+  transition: 0.15s;
+  cursor: pointer;
+}
+.carColor:hover{
+  outline: 0.75vh solid rgba(88, 88, 88, 0.5);
+}
+#carColorRed{
+  left: 15.55vh;
+  background-color: rgba(255, 0, 0, 0.75);
+}
+#carColorBlue{
+  left: 20.45vh;
+  background-color: rgba(0, 143, 255, 0.75);
+}
+#carColorGreen{
+  left: 25.35vh;
+  background-color: rgba(11, 255, 0, 0.75);
+}
+#carColorSilver{
+  left: 30.25vh;
+  background-color: rgba(192, 192, 192, 0.75);
+}
+#carColorBlack{
+  left: 35.15vh;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+#carColorWhite{
+  left: 40.05vh;
+  background-color: rgba(255, 255, 255, 0.75);
+}
+#carColorYellow{
+  left: 44.95vh;
+  background-color: rgba(223, 255, 0, 0.75);
+}
+.priceBox{
+  position: absolute;
+  width: 30vh;
+  height: 5vh;
+  top: 71.75vh;
+  left: 4vh;
+  background-color: rgba(61, 61, 61, 0.5);
+  border-radius: 0.15vh;
+}
+
+.dollarSign{
+  position: absolute;
+  width: 2.5vh;
+  height: 2.5vh;
+  background-color: rgba(58, 255, 0, 0.75);
+  filter: drop-shadow(0 0 1.5vh rgba(58, 255, 0, 0.75));
+  border-radius: 0.25vh;
+  top: 1.25vh;
+  left: 1vh;
+}
+.dollarSignIcon{
+  position: absolute;
+  margin: 0;
+  width: 2vh;
+  height: 2vh;
+  background-repeat: no-repeat;
+  background-size: 1.5vh;
+  background-position: center;
+  background-image: url(icons/dollarSign.png);
+  filter: drop-shadow(0 0 0.5vh rgba(0, 126, 8, 1));
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+}
+
+.totalPriceText{
+  position: absolute;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+  font-size: 1.5vh;
+  color: #FDFDFD;
+  top: 1.85vh;
+  left: 6vh;
+}
+
+.totalPrice{
+  position: absolute;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+  font-size: 1.35vh;
+  color: rgba(153, 254, 62, 1);
+  position: absolute;
+  left: 30vh;
+  width: 14vh;
+  height: 5vh;
+  background-color:rgba(153, 254, 62, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.15vh;
+}
+.payButton{
+  position: absolute;
+  top: 77.5vh;
+  width: 10vh;
+  height: 5vh;
+  background-color:rgba(54, 54, 54, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.15vh;
+  transition: 0.15s;
+  cursor: pointer;
+}
+.payButtonBox{
+  position: absolute;
+  width: 4.2vh;
+  height: 5vh;
+  background-color: rgba(170, 170, 170, 0.5);
+  top: 0vh;
+  left: -4.15vh;
+  transition: 0.15s;
+  border-radius: 0.15vh;
+}
+.payButtonIcon{
+  position: absolute;
+  margin: 0;
+  width: 4vh;
+  height: 4vh;
+  background-repeat: no-repeat;
+  background-size: 2vh;
+  background-position: center;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  transition: 0.15s;
+}
+.payButtonText{
+  position: absolute;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+  font-size: 1.5vh;
+  color: gray;
+}
+.payButton:hover{
+  background-color:rgba(240, 240, 240, 0.7);
+}
+.payButton:hover .payButtonBox{
+  background-color:rgba(206, 206, 206, 0.7);
+}
+.payButton:hover .payButtonIcon{
+  filter: brightness(0) saturate(100%) invert(48%) sepia(0%) saturate(1263%) hue-rotate(240deg) brightness(99%) contrast(96%);
+}
+
+#payCash{
+  left: 8.1vh;
+}
+#payCashIcon{
+  background-image: url(icons/cash.png);
+}
+#TestDrive{
+  left: 23.05vh;
+}
+#TestDriveIcon{
+  background-image: url(icons/testDrive.png);
+}
+#payCard{
+  left: 38.05vh;
+}
+#payCardIcon{
+  background-image: url(icons/payCard.png);
+}
+
+.shortLine{
+  position: absolute;
+  top: 66.5vh;
+  left: 2.5vh;
+  width: 0.36vh;
+  height: 16vh;
+  background-color: rgba(37, 37, 37, 1);
+  border-radius: 1vh;  
+}
+#threeLinesMiddle{
+  position: absolute;
+  left: -14vh;
+  top: 56vh;
+}
+.cars{
+  position: relative;
+  left: 2.1vh;
+  top: 75vh;
+  width: 90vw;
+  height: 20.75vh;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  display: flex;
+  scroll-behavior: smooth;
+}
+::-webkit-scrollbar {
+  width: 1vw;
+  height: 0.65vh;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.8);
+  border-radius: 0.25vw;
+  width: 0.1vh;
+  height: 0.1vh;
+}
+.carBox{
+  flex: 0 0 auto;
+  display: inline-block;
+  position: relative;
+  width: 30vh;
+  height: 18.5vh;
+  top: 0vh;
+  left: 0vh;
+  background-color: rgba(150, 150, 150, 0.1);
+  border-radius: 0.15vh;
+  align-items: center;
+  justify-content: center;
+  margin: 1vh;
+  transition: opacity 0.5s ease;
+  
+}
+.fadeOut {
+  opacity: 0; /* Set opacity to 0 for fade-out effect */
+}
+
+.fadeIn {
+  opacity: 1; /* Set opacity to 1 for fade-in effect */
+}
+.carName{
+  position: absolute;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+  font-size: 1.5vh;
+  color: #FDFDFD;
+  top: 1.5vh;
+  left: 1.5vh;
+}
+.carName::after{
+  font-size: 1.25vh;
+  color: gray;
+  content: attr(data-content);
+}
+.triangleCorner{
+  position: absolute;
+  top: 0.5vh;
+  right: 0.5vh;
+  width: 0vh;
+  height: 0vh;
+  border-top: 1vh solid white;
+  border-left: 1vh solid transparent;
+}
+
+.carPicture{
+  position: absolute;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: 25vh;
+  background-position: center;
+  /* background-image: attr(picture-content); */
+  transform: translate(-50%, -50%);
+  top: 12vh;
+  left: 50%;
+  transition: 0.15s;
+}
+.buyCar{
+  position: absolute;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+  font-size: 1.25vh;
+  color: gray;
+  position: absolute;
+  top: 15vh;
+  left: 1vh;
+  width: 14vh;
+  height: 2.5vh;
+  background-color:rgba(255, 255, 255, 0.863);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.15vh;
+  filter: drop-shadow(0vh 0vh 0.5vh white);
+  cursor: pointer;
+}
+.carPrice{
+  position: absolute;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+  font-size: 1.25vh;
+  color: rgba(153, 254, 62, 1);
+  position: absolute;
+  top: 15vh;
+  right: 1vh;
+  width: 14vh;
+  height: 2.5vh;
+  background-color:rgba(153, 254, 62, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.15vh;
+}
+
+.mediumLine{
+  position: absolute;
+  top: 75.25vh;
+  left: 2.85vh;
+  width: 0.36vh;
+  height: 23.25vh;
+  background-color: rgba(37, 37, 37, 1);
+  border-radius: 1vh;  
+}
+
+.lineOneUpper{
+  position: absolute;
+  top: 72.65vh;
+  left: 5.5vh;
+  width: 0.36vh;
+  height: 5.5vh;
+  background-color:#252525;
+  border-radius: 1vh;  
+  transform: rotate(90deg);
+}
+.lineTwoLower{
+  position: absolute;
+  top: 95.65vh;
+  left: 5.5vh;
+  width: 0.36vh;
+  height: 5.5vh;
+  background-color:#252525;
+  border-radius: 1vh;  
+  transform: rotate(90deg);
+}
+
+.lineOneUpperDot{
+  position: absolute;
+  top: 0vh;
+  left: 0vh;
+  width: 0.4vh;
+  height: 0.4vh;
+  background-color:#FDFDFD;
+  border-radius: 100vh;  
+  transform: rotate(90deg);
+}
+.lineTwoLowerDot{
+  position: absolute;
+  top: 0vh;
+  left: 0vh;
+  width: 0.4vh;
+  height: 0.4vh;
+  background-color:#FDFDFD;
+  border-radius: 100vh;  
+  transform: rotate(90deg);
+}
+
+#scrollRightBtn {
+  position: absolute;
+  background-color: rgba(27, 27, 27, 0.5);
+  width: 2vh;
+  top: 72.5vh;
+  left: 83.5vh;
+  cursor: pointer;
+  padding: 1vh;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+#scrollLeftBtn {
+  position: absolute;
+  background-color: rgba(27, 27, 27, 0.5);
+  width: 2vh;
+  top: 72.5vh;
+  left: 78vh;
+  cursor: pointer;
+  padding: 1vh;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
+
+#scrollLeftBtn:hover{
+  background-color: rgba(192, 192, 192, 0.5);
+}
+#scrollRightBtn:hover{
+  background-color: rgba(192, 192, 192, 0.5);
+}
+
+.arrow {
+  border: solid white;
+  border-width: 0vh 0.4vh 0.4vh 0vh;
+  display: inline-block;
+  padding: 0.4vh;
+}
+#arrowLeft{
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+#arrowRight{
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.testCarBody{
+  display: none;
+}
+.carTestedBox{
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 600;
+  font-size: 1.35vh;
+  color: #99fe3e;
+  position: absolute;
+  top: 5vh;
+  left: 80.1vh;
+  width: 30vh;
+  height: 10vh;
+  background-color: rgba(27, 27, 27, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.25vh;
+  transform: skew(-7.5deg);
+}
+.timerBox{
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 900;
+  font-style: italic;
+  font-size: 6vh;
+  color: #99fe3e;
+  position: absolute;
+  top: 5vh;
+  left: 70vh;
+  width: 10vh;
+  height: 10vh;
+  background-color: rgba(27, 27, 27, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.25vh;
+  transform: skew(-7.5deg);
+  outline: 0.25vh solid #99fe3e;
+  filter: drop-shadow(0vh 0vh 0.25vh #99fe3e);
+  transition: color 0.75s ease;
+}
+.changing-second::after {
+  color: #fe3e3e;
+  text-shadow: 0vh 0vh 0.5vh #fe3e3e;
+
+}
+.changing-both::before,
+.changing-both::after {
+  color: #fe3e3e;
+  text-shadow: 0vh 0vh 0.5vh #fe3e3e;
+}
+.timerBox::before{
+  content: attr(data-first-digit);
+}
+.timerBox::after{
+  content: attr(data-second-digit);
+  /* color: #fe3e3e;
+  text-shadow: 0vh 0vh 0.5vh #fe3e3e; */
+}
+
+.testingA{
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.25vh;
+  font-size: 1.5vh;
+  color: white;
+  position: absolute;
+  top: 0.5vh;
+}
+
+
+.carTestedName{
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 600;
+  font-size: 1.75vh;
+  letter-spacing: 0.15vh;
+  color: #99fe3e;
+  filter: drop-shadow(0vh 0vh 0.25vh rgb(153, 254, 62, 0.5));
+  position: absolute;
+  top: 2.25vh;
+}
+
+.thisCarPrice{
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.15vh;
+  font-size: 1.5vh;
+  color: white;
+  position: absolute;
+  top: 5vh;
+}
+
+.testingPrice{
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 600;
+  font-size: 1.75vh;
+  letter-spacing: 0.15vh;
+  color: #99fe3e;
+  filter: drop-shadow(0vh 0vh 0.25vh rgb(153, 254, 62, 0.5));
+  position: absolute;
+  top: 6.75vh;
+}
+
+
+
+.undraggable{
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -webkit-touch-callout: none;
+  -khtml-user-select: none;
+}
